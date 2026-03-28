@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelZone | Modern Retro Arcade</title>
+    <meta name="description" content="Play the best retro pixel games online at PixelZone. Featuring neon aesthetics and classic arcade gameplay.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body id="arcade-body">
+    <!-- Loading Screen -->
+    <div id="loader">
+        <h2 class="logo">PIXELZONE</h2>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <p style="margin-top: 10px; color: var(--neon-cyan);">INITIALIZING SYSTEMS...</p>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="grid-bg"></div>
+    <div class="scanline"></div>
+    <div class="vignette"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">PIXELZONE</div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#games">GAMES</a></li>
+                <li><a href="#about">ABOUT</a></li>
+            </ul>
+        </nav>
+        <button class="btn-pixel" id="connect-btn">SIGN IN</button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>PLAY RETRO PIXEL<br>GAMES ONLINE</h1>
+            <p>Experience the golden age of arcade gaming with a modern neon twist. Instant play, no downloads needed.</p>
+            <a href="#games" class="btn-pixel" style="text-decoration: none;">BROWSE GAMES</a>
+        </section>
+
+        <!-- Games Grid -->
+        <section id="games" class="games-section">
+            <h2 class="section-title">FEATURED GAMES</h2>
+            
+            <div style="max-width: 600px; margin: 0 auto 3rem auto; text-align: center; position: relative;">
+                <input type="text" id="game-search" placeholder="SEARCH PIXEL GAMES..." style="width: 100%; padding: 1rem 1.5rem; background: rgba(0,0,0,0.5); border: 2px solid var(--neon-cyan); border-radius: 4px; color: #fff; font-family: 'Press Start 2P', cursive; font-size: 0.8rem; outline: none; transition: all 0.3s ease; box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);">
+                <span style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--neon-cyan); opacity: 0.5;">🔍</span>
+            </div>
+
+            <div class="game-grid" id="arcade-grid">
+                <!-- Game 1: Neon Snake -->
+                <article class="game-card" onclick="openGame('snake')">
+                    <img src="" alt="Neon Snake" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">NEON SNAKE</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 2: Pixel Jump -->
+                <article class="game-card" onclick="openGame('jump')">
+                    <img src="" alt="Pixel Jump" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">PIXEL JUMP</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 3: Star Defender -->
+                <article class="game-card" onclick="openGame('space')">
+                    <img src="" alt="Star Defender" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">STAR DEFEND</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 4: Cyber Racer -->
+                <article class="game-card" onclick="openGame('car')">
+                    <img src="" alt="Cyber Racer" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">CYBER RACER</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 5: Crypt Quest -->
+                <article class="game-card" onclick="openGame('dungeon')">
+                    <img src="" alt="Dungeon Quest" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">CRYPT QUEST</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 6: Block Smasher -->
+                <article class="game-card" onclick="openGame('block')">
+                    <img src="" alt="Block Smasher" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">BLOCK SMASH</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 7: Pixel Bird -->
+                <article class="game-card" onclick="openGame('bird')">
+                    <img src="" alt="Pixel Bird" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">PIXEL BIRD</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 8: Dino Runner -->
+                <article class="game-card" onclick="openGame('dino')">
+                    <img src="" alt="Dino Runner" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">DINO RUNNER</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 9: Neon Shadow Runner -->
+                <article class="game-card" onclick="openGame('shadow')">
+                    <img src="" alt="Neon Shadow Runner" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">SHADOW RUN</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 10: Pixel Zombie Survival -->
+                <article class="game-card" onclick="openGame('zombie')">
+                    <img src="" alt="Pixel Zombie Survival" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">ZOMBIE SMASH</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 11: Space Miner -->
+                <article class="game-card" onclick="openGame('miner')">
+                    <img src="" alt="Space Miner" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">SPACE MINER</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 12: Neon Shooter -->
+                <article class="game-card" onclick="openGame('shooter')">
+                    <img src="" alt="Neon Shooter" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">NEON SHOOTER</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 13: Pixel Farm -->
+                <article class="game-card" onclick="openGame('farm')">
+                    <img src="" alt="Pixel Farm" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">PIXEL FARM</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+
+                <!-- Game 14: Pixel Defense -->
+                <article class="game-card" onclick="openGame('td')">
+                    <img src="" alt="Pixel Defense" class="game-thumb">
+                    <div class="game-info">
+                        <h3 class="game-title">PIXEL DEFENSE</h3>
+                        <button class="btn-pixel" style="padding: 0.5rem 1rem;">PLAY</button>
+                    </div>
+                </article>
+            </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="hero" style="background: rgba(0,0,0,0.3); margin-top: 5rem; height: auto; padding: 5rem 5%;">
+            <h2 class="section-title">ABOUT PIXELZONE</h2>
+            <p>PixelZone is a passion project dedicated to preserving the feel of classic 8-bit games while embracing modern web technologies. Each game is crafted to provide a quick, fun, and nostalgic experience.</p>
+        </section>
+    </main>
+
+    <!-- Modal for Game Player -->
+    <div class="modal-overlay" id="game-modal">
+        <div class="modal-content">
+            <!-- Sidebar -->
+            <div class="game-sidebar">
+                <div class="logo" style="font-size: 0.8rem; margin-bottom: 1rem;">CONSOLE_V1</div>
+                
+                <div class="sidebar-stat">
+                    <span class="stat-label">CURRENT GAME</span>
+                    <span class="stat-value" id="modal-game-title">NEON SNAKE</span>
+                </div>
+
+                <div class="sidebar-stat">
+                    <span class="stat-label">SCORE</span>
+                    <span class="stat-value" id="current-score">0</span>
+                </div>
+
+                <div class="sidebar-stat" id="lives-stat">
+                    <span class="stat-label">LIVES</span>
+                    <div class="lives-container" id="hearts-container">
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-stat">
+                    <span class="stat-label">CONTROLS</span>
+                    <span class="stat-value" style="font-size: 0.7rem;" id="game-controls">WASD / ARROWS</span>
+                </div>
+
+                <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.8rem;">
+                    <button class="btn-pixel" id="fullscreen-btn" style="width: 100%; font-size: 0.6rem; background-color: var(--neon-cyan);">GO FULLSCREEN</button>
+                    <button class="btn-pixel" onclick="stopGame(); gameModal.style.display='none';" style="width: 100%; font-size: 0.6rem;">EXIT GAME</button>
+                </div>
+            </div>
+
+            <!-- Main Area -->
+            <div class="main-game-area">
+                <span class="modal-close" id="close-modal">&times;</span>
+                <div class="game-container">
+                    <canvas id="game-canvas"></canvas>
+                    
+                    <!-- Mobile Controls Overlay (hidden by default in CSS) -->
+                    <div id="mobile-controls">
+                        <div class="dpad">
+                            <button class="dbtn up" id="ctrl-up">Λ</button>
+                            <button class="dbtn left" id="ctrl-left">&lt;</button>
+                            <button class="dbtn down" id="ctrl-down">V</button>
+                            <button class="dbtn right" id="ctrl-right">&gt;</button>
+                        </div>
+                        <div class="actions">
+                            <button class="abtn" id="ctrl-a">A</button>
+                        </div>
+                    </div>
+
+                    <!-- Tool Selection HUD (Visible in Farm mode) -->
+                    <div id="farm-hud" style="display: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); flex-direction: row; gap: 10px; z-index: 100;">
+                        <button class="btn-pixel tool-btn" onclick="fmTool='hoe'; updateHUD();" style="width: 50px; height: 50px; padding: 0;">HOE</button>
+                        <button class="btn-pixel tool-btn" onclick="fmTool='seeds'; updateHUD();" style="width: 50px; height: 50px; padding: 0;">SEED</button>
+                        <button class="btn-pixel tool-btn" onclick="fmTool='water'; updateHUD();" style="width: 50px; height: 50px; padding: 0;">WTR</button>
+                        <button class="btn-pixel tool-btn" onclick="fmTool='harvest'; updateHUD();" style="width: 50px; height: 50px; padding: 0;">SELL</button>
+                    </div>
+
+                    <!-- Tower Selection HUD (TD mode) -->
+                    <div id="td-hud" style="display: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); flex-direction: row; gap: 10px; z-index: 100;">
+                        <button class="btn-pixel td-btn" onclick="tdTool='basic'; updateHUD();" style="width: 60px; height: 60px; padding: 0; background-color: #3b82f6;">GUN($50)</button>
+                        <button class="btn-pixel td-btn" onclick="tdTool='sniper'; updateHUD();" style="width: 60px; height: 60px; padding: 0; background-color: #fbbf24;">SNIPER($100)</button>
+                        <button class="btn-pixel td-btn" onclick="tdTool='rapid'; updateHUD();" style="width: 60px; height: 60px; padding: 0; background-color: #f472b6;">RAPID($120)</button>
+                        <button class="btn-pixel td-btn" onclick="tdTool='sell'; updateHUD();" style="width: 60px; height: 60px; padding: 0; background-color: #ef4444;">SELL</button>
+                    </div>
+                    </div>
+
+                    <div id="game-overlay" style="position: absolute; color: #fff; text-align: center; display: none; background: rgba(0,0,0,0.8); width: 100%; height: 100%; justify-content: center; align-items: center; flex-direction: column; z-index: 50;">
+                        <h2 id="game-over-text" style="font-family: 'Press Start 2P'; color: var(--neon-pink);">GAME OVER</h2>
+                        <p id="final-score" style="margin: 1rem 0;">Score: 0</p>
+                        <button class="btn-pixel" onclick="startGame()">RESTART (ENTER)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="font-size: 1rem;">PIXELZONE</div>
+            <p style="font-size: 1rem; color: var(--text-dim);">MADE BY FARAZ &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
